@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Copy Cat(Testing)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of contents
 
-## Available Scripts
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+### The challenge
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Users should be able to:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- View the optimal layout for the app depending on their device's screen size
+- Enter text in the input area.
+- Below face, the input will be copied simultaneously.
+- Click on cat, mimicked text will be hidden and tap will cover cats mouth
+- In Node.js, run `npm test` and see the test pass.
 
-### `npm test`
+### Screenshot
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![](./screen.jpg)
 
-### `npm run build`
+### Links
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Live Site URL: [View](https://copycattest.netlify.app/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## My process
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- First, you need to import the required modules and methods: React for JSX syntax, `render` and `screen` from `@testing-library/react` to render the component and query the DOM, and `@testing-library/jest-dom` for DOM-specific matchers like `.toBeInTheDocument()`.
+- In the first test, you render the CopyCat component with specific props, such as `name: 'Mack'`, and verify that the text "Copy Cat Mack" appears in the header using `screen.getByText()`.
+- The second test checks that when `isCopying` is `true`, the input text is copied into a paragraph below the cat image.
+- You simulate this behavior by rendering the component with a `value` prop, checking that the input has the expected value, and confirming that the paragraph displays the copied text.
+- Afterward, when testing the CopyCatContainer component, you simulate user interactions with the `input` field and the cat image.
+- Using `userEvent` to mimic typing and clicking, you verify that the input text is rendered or disappears asynchronously based on the `isCopying` state, using `waitFor()` for handling asynchronous operations.
+- Finally, you write tests for toggling between the `copycat` and `quietcat` states and ensure that the text reappears when the tape is removed from the cat's mouth.
 
-### `npm run eject`
+### Built with
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Semantic HTML5 markup
+- CSS custom properties
+- Mobile-Responsive Design
+- JavaScript - Scripting language
+- [React](https://reactjs.org/) - JS library
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### What I learned
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This was a class project to learn about react testing library.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Continued development
 
-## Learn More
+maybe use later
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Author
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Website - [Cameron Howze](https://camkol.github.io/)
+- Frontend Mentor - [@camkol](https://www.frontendmentor.io/profile/camkol)
+- GitHub- [@camkol](https://github.com/camkol)
+- LinkedIn - [@cameron-howze](https://www.linkedin.com/in/cameron-howze-28a646109/)
+- E-Mail - [cameronhowze4@outlook.com](mailto:cameronhowze4@outlook.com)
